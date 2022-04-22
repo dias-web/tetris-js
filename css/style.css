@@ -1,27 +1,85 @@
-h1 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
+@font-face {
+  font-family: "FulboArgenta";
+  src: url("/font/FulboArgenta.woff") format("woff"),
+    url("/font/FulboArgenta.ttf") format("truetype");
 }
 
+h1 {
+  text-align: center;
+  font-family: "FulboArgenta";
+  color: white;
+  width: 400px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
 h1 span {
-  font-weight: 900;
+  font-size: 30px;
+}
+
+p {
+  color: white;
+  font-family: "FulboArgenta";
 }
 
 body {
   font-family: sans-serif;
+  background: url("/image/bg.svg");
 }
 
 .container {
+  border: 2px solid white;
+  color: white;
+  background-color: black;
   width: 500px;
   margin: 0 auto;
+  margin-top: 40px;
+  display: grid;
+  gap: 50px;
+  align-items: flex-start;
+  grid-template-areas:
+    "next game"
+    "score game";
+  padding: 10px;
 }
 
 .game-area {
-  border: solid black;
-  border-width: 0 2px 3px 2px;
   display: block;
+  margin-left: 5%;
+}
+
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+.out-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+.glass .out-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+}
+.out-glass .glass {
+  border-radius: 7px;
 }
